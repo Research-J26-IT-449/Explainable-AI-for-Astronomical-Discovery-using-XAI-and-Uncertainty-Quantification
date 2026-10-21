@@ -65,6 +65,6 @@ For each experiment, record the question, dataset/source and version, inclusion 
 
 ## Current project status
 
-**Repository setup:** The shared repository structure and collaboration documentation are being established.
+**Repository setup:** The base shared directory structure and collaboration documentation have been created on `main`.
 
 **Research status:** This repository setup does not establish that any component implementation, experiment, or result is complete. Component-specific progress must be documented and verified by its contributors.
