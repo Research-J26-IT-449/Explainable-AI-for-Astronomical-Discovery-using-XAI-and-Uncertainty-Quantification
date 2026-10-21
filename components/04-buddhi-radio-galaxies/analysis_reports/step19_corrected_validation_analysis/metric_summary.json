@@ -1,0 +1,186 @@
+{
+  "status": "VALIDATION ANALYSIS COMPLETED",
+  "experiment": "corrected_seed42_01",
+  "protocol": "MiraBest-Development-ExactDedup-v1.0.0",
+  "membership_sha256": "4fe53fae197ff3c757afb7b02164eea3b9ea8588c5a3a3bfcd14aba3c6afcf91",
+  "cohort_counts": {
+    "train": {
+      "0": 245,
+      "1": 307
+    },
+    "validation": {
+      "0": 51,
+      "1": 65
+    }
+  },
+  "epochs_completed": 30,
+  "stop_reason": "maximum_epoch_limit",
+  "process_seconds": 1089.2748428,
+  "device": "cpu",
+  "best_validation_epoch": 30,
+  "best_validation_loss": 0.3447643220424652,
+  "overall_validation_accuracy": 0.8706896551724138,
+  "derived_correct_count": 101,
+  "derived_incorrect_count": 15,
+  "highest_accuracy_epoch": 23,
+  "highest_epoch_accuracy": 0.8879310344827587,
+  "checkpoint_sha256": "d5841b91b8cdcdb0fb8a538b9a8c79955a7bf83b4a3dcb3bf8cc4f176f6f687c",
+  "checkpoint_metadata_keys": [
+    "config",
+    "epoch",
+    "model_state_dict",
+    "validation_accuracy",
+    "validation_loss"
+  ],
+  "final_train_loss": 0.33536684037982556,
+  "final_train_accuracy": 0.8677536231884058,
+  "final_validation_minus_train_loss": 0.00939748166263965,
+  "final_validation_minus_train_accuracy_pp": 0.29360319840080473,
+  "learning_rate_changes_after_validation": [
+    {
+      "epoch": 4,
+      "old_lr": 0.0003,
+      "new_lr": 0.00015,
+      "effective_for_training_from_epoch": 5
+    },
+    {
+      "epoch": 8,
+      "old_lr": 0.00015,
+      "new_lr": 7.5e-05,
+      "effective_for_training_from_epoch": 9
+    },
+    {
+      "epoch": 11,
+      "old_lr": 7.5e-05,
+      "new_lr": 3.75e-05,
+      "effective_for_training_from_epoch": 12
+    },
+    {
+      "epoch": 20,
+      "old_lr": 3.75e-05,
+      "new_lr": 1.875e-05,
+      "effective_for_training_from_epoch": 21
+    },
+    {
+      "epoch": 26,
+      "old_lr": 1.875e-05,
+      "new_lr": 9.375e-06,
+      "effective_for_training_from_epoch": 27
+    }
+  ],
+  "largest_accuracy_jumps": [
+    {
+      "from_epoch": 5,
+      "to_epoch": 6,
+      "validation_loss_change": 0.8502786138962055,
+      "validation_accuracy_change_pp": -35.344827586206904
+    },
+    {
+      "from_epoch": 4,
+      "to_epoch": 5,
+      "validation_loss_change": -0.47005867341469076,
+      "validation_accuracy_change_pp": 24.13793103448276
+    },
+    {
+      "from_epoch": 11,
+      "to_epoch": 12,
+      "validation_loss_change": -0.3309783195627146,
+      "validation_accuracy_change_pp": 22.413793103448278
+    },
+    {
+      "from_epoch": 7,
+      "to_epoch": 8,
+      "validation_loss_change": -0.6977143719278533,
+      "validation_accuracy_change_pp": 18.96551724137931
+    },
+    {
+      "from_epoch": 17,
+      "to_epoch": 18,
+      "validation_loss_change": 0.18781580801667835,
+      "validation_accuracy_change_pp": -12.93103448275862
+    },
+    {
+      "from_epoch": 22,
+      "to_epoch": 23,
+      "validation_loss_change": -0.06365520173105699,
+      "validation_accuracy_change_pp": 10.344827586206906
+    }
+  ],
+  "classification_metrics": {
+    "confusion_matrix": {
+      "status": "NOT YET AVAILABLE",
+      "value": null,
+      "reason": "No saved per-image validation predictions or confusion counts"
+    },
+    "per_class_precision": {
+      "status": "NOT YET AVAILABLE",
+      "value": null,
+      "reason": "No saved per-image validation predictions or confusion counts"
+    },
+    "per_class_recall": {
+      "status": "NOT YET AVAILABLE",
+      "value": null,
+      "reason": "No saved per-image validation predictions or confusion counts"
+    },
+    "per_class_f1": {
+      "status": "NOT YET AVAILABLE",
+      "value": null,
+      "reason": "No saved per-image validation predictions or confusion counts"
+    },
+    "macro_f1": {
+      "status": "NOT YET AVAILABLE",
+      "value": null,
+      "reason": "No saved per-image validation predictions or confusion counts"
+    },
+    "weighted_f1": {
+      "status": "NOT YET AVAILABLE",
+      "value": null,
+      "reason": "No saved per-image validation predictions or confusion counts"
+    }
+  },
+  "historical_validation_accuracy": 0.8571428571428571,
+  "historical_validation_n": 119,
+  "corrected_validation_n": 116,
+  "descriptive_accuracy_difference_pp": 1.3546798029556717,
+  "comparison_status": "Different training/validation cohorts; no superiority test or claim",
+  "discrepancies": [],
+  "inventory": [
+    {
+      "reference": "outputs/models/mirabest_development_exactdedup_v1.0.0/corrected_seed42_01/complete.json",
+      "bytes": 719,
+      "sha256": "ae99650ccc5c8042b144dc94b90f3bcdeff8b0076701404a1e4b6c4ecfaa7acf"
+    },
+    {
+      "reference": "outputs/models/mirabest_development_exactdedup_v1.0.0/corrected_seed42_01/epoch_telemetry.jsonl",
+      "bytes": 7226,
+      "sha256": "bde5a4243f417951cd7f68bef4820f3f2dd0ed3c5e240677144a10a28ee2b47f"
+    },
+    {
+      "reference": "outputs/models/mirabest_development_exactdedup_v1.0.0/corrected_seed42_01/figures/resnet_training_curves.png",
+      "bytes": 93233,
+      "sha256": "1543f6f14ae2ed204a7126a977d7d6614efac875e7250cbf452584c6d46947d7"
+    },
+    {
+      "reference": "outputs/models/mirabest_development_exactdedup_v1.0.0/corrected_seed42_01/metrics/resnet_training_history.csv",
+      "bytes": 2750,
+      "sha256": "839a74b2758ec9c8f9a2f038d45beedb418ca6493ac67dc3bec9be59b4c27267"
+    },
+    {
+      "reference": "outputs/models/mirabest_development_exactdedup_v1.0.0/corrected_seed42_01/metrics/resnet_validation_metrics.json",
+      "bytes": 7787,
+      "sha256": "b2e782284ffdae51b6d98bc50a0eb7f4a1dfcda7acbe7390fb45c199aecabdb5"
+    },
+    {
+      "reference": "outputs/models/mirabest_development_exactdedup_v1.0.0/corrected_seed42_01/models/resnet_cnn_best.pth",
+      "bytes": 1385141,
+      "sha256": "d5841b91b8cdcdb0fb8a538b9a8c79955a7bf83b4a3dcb3bf8cc4f176f6f687c"
+    },
+    {
+      "reference": "outputs/models/mirabest_development_exactdedup_v1.0.0/corrected_seed42_01/run_provenance.json",
+      "bytes": 2243,
+      "sha256": "757f64ea35a3c2f97b6c8c648b562b02047b515625e720ae0782235d1d1212ad"
+    }
+  ],
+  "new_dataset_decoding": false,
+  "new_model_forward_passes": 0
+}

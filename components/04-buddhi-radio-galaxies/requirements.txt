@@ -1,0 +1,21 @@
+# Python 3.12 project dependencies
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+pyyaml
+tqdm
+pillow
+
+jupyter
+ipykernel
+
+torch
+torchvision
+
+opencv-python
+astropy
+grad-cam
+pytest
+gradio

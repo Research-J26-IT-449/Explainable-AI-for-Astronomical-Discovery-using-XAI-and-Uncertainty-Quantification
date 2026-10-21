@@ -1,0 +1,33 @@
+{
+  "phase": "precommit_migration_audit",
+  "original_project_files_hashed_unchanged": 741,
+  "original_index_unchanged": true,
+  "original_head_unchanged": true,
+  "protected_artifacts_unchanged": 41,
+  "other_group_files_unchanged": 8,
+  "scientific_source_differences": [],
+  "test_compatibility_differences": [
+    "tests/test_auto_radio.py"
+  ],
+  "credential_pattern_findings": [],
+  "forbidden_data_or_checkpoint_files": [],
+  "all_candidate_files_under_2_mib": true,
+  "no_raw_dataset_access_or_research_inference": true,
+  "backup_not_modified": true,
+  "candidate_file_count_before_final_reports": 186,
+  "scope": "components/04-buddhi-radio-galaxies only",
+  "unverified_or_blocked": [
+    "27 excluded-artifact integration tests",
+    "independent corrected TEST/external generalization",
+    "corrected OOD calibration",
+    "source-image redistribution",
+    "fully locked fresh-environment reproduction"
+  ],
+  "tests": {
+    "tests": 853,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 27,
+    "passed": 826
+  }
+}

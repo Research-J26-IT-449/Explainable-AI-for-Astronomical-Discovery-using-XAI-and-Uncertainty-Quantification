@@ -1,0 +1,40 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows 11",
+  "environment_source": "Existing individual-project virtual environment; no package installation",
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "scikit-learn": "1.9.1",
+    "pyyaml": "6.0.3",
+    "tqdm": "4.70.1",
+    "pillow": "12.3.0",
+    "jupyter": "1.1.1",
+    "ipykernel": "7.3.0",
+    "torch": "2.14.0",
+    "torchvision": "0.29.0",
+    "opencv-python": "5.0.0.93",
+    "astropy": "8.0.1",
+    "grad-cam": "1.5.7",
+    "pytest": "9.1.1",
+    "gradio": "6.29.0"
+  },
+  "syntax_files": 109,
+  "syntax_status": "PASS",
+  "test_scope": "Synthetic and metadata-only tests; availability skips explicit in tests/conftest.py; no real datasets/checkpoints present",
+  "commands": [
+    "python -B -m pytest -q -ra -p no:cacheprovider --basetemp=.migration_runtime/pytest --junitxml=research_evidence/migration_checks/pytest.xml"
+  ],
+  "dependency_check": {
+    "command": "python -B -m pip check",
+    "exit_code": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": ""
+  },
+  "pytest": {
+    "exit_code": 1,
+    "elapsed_seconds": 123.94327439999961
+  }
+}

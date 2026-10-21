@@ -1,0 +1,80 @@
+{
+  "type": "migration_saved_evidence_verification_not_new_evaluation",
+  "historical_original_head": "2d6e5883e4a6a16252efdb24e5e4f52f61aca026",
+  "images": 116,
+  "confusion_matrix": [
+    [
+      38,
+      13
+    ],
+    [
+      2,
+      63
+    ]
+  ],
+  "accuracy": 0.8706896551724138,
+  "macro_f1": 0.8643909282207154,
+  "aopc30_means_recomputed_from_saved_records": {
+    "Grad-CAM": 0.29451047110036394,
+    "Brightness": 0.2222544224191012,
+    "Random": 0.053960119069808535
+  },
+  "original_cam_valid": 116,
+  "checkpoint_sha256": "d5841b91b8cdcdb0fb8a538b9a8c79955a7bf83b4a3dcb3bf8cc4f176f6f687c",
+  "manifest_sha256": "4fe53fae197ff3c757afb7b02164eea3b9ea8588c5a3a3bfcd14aba3c6afcf91",
+  "source_files": {
+    "data/manifests/mirabest_development_exactdedup_v1.0.0/manifest.json": "4fe53fae197ff3c757afb7b02164eea3b9ea8588c5a3a3bfcd14aba3c6afcf91",
+    "data/manifests/mirabest_development_exactdedup_v1.0.0/manifest.sha256": "455fcc7972c8f5d5fc0549a81a0e5ba1566b1b2aaeab8e3a2d3772234bbb9e81",
+    "data/manifests/mirabest_development_exactdedup_v1.0.0/provenance.json": "79adf7312ffa117669eaef0390e49b91769c51e2d8a5b2d01394f871d1a91b14",
+    "data/manifests/mirabest_development_exactdedup_v1.0.0/quarantine.json": "3f50975d1e9d1a82605cf7d83547ba1031c9ec2ed62b3f33c933bd0883afa72c",
+    "data/manifests/mirabest_development_exactdedup_v1.0.0/README.md": "c5c148f9a043bc6214bc6496b39628b3e781914b8ac775c530823db6bae87ab2",
+    "data/manifests/mirabest_development_exactdedup_v1.0.0/validation_report.json": "a6720a7e761177ea51f505c8c41d8f0de52cc534c64b187aedd1ec806db8c25e",
+    "analysis_reports/step14b_real_duplicate_audit/run_20261019_221005/audit_summary.md": "2b6790a191f759d3b09b27d294e35501d9617aa94e41bc29921357c9d84d084a",
+    "analysis_reports/step14b_real_duplicate_audit/run_20261019_221005/results/audit_report.json": "4361fa04acfda3d12645cafcaa18e9a345b724e0316902ed8dc62ac0fdc6737b",
+    "analysis_reports/step14b_real_duplicate_audit/run_20261019_221005/results/image_hashes.csv": "c85ddd482e96ecb8e56eec82eefd889346c2823e182abc6ff1044cfd2469df68",
+    "analysis_reports/step14b_real_duplicate_audit/run_20261019_221005/results/duplicate_groups.json": "fff558c1ecd555d4a4a7196e39457abec54edb587befce3f069d01130c444b79",
+    "analysis_reports/step14c_duplicate_impact_review/duplicate_impact_review.md": "3fc587491aebbdf6fafacb0ec00e8f9739c0e1ad7fc8dfa26e10db59b8f05810",
+    "analysis_reports/step15_corrected_dataset_protocol/corrected_protocol_proposal.md": "0600bce69cd45ab0bbb10057144f0d1157ed67e645197c3623d094c78063091f",
+    "analysis_reports/step18_corrected_cnn_training/training_report.md": "5460cbbeb996f7b2fcc8b511cd819543583a303f2864c19d4f547c152639488d",
+    "analysis_reports/step19_corrected_validation_analysis/validation_analysis_report.md": "cf33435aae4fa8b52a2cd23590373d03f11f9f99e588c5fb9f3984274c705082",
+    "analysis_reports/step19_corrected_validation_analysis/metric_summary.json": "b6f66eece4c644215a8f0c0b130f5d419555e116d274027c6fc5dd8e856475cf",
+    "analysis_reports/step19_corrected_validation_analysis/training_loss_curve.png": "9c270ab8480b71e1bbd6f0f4ed59cca85bac6f1ec9d8f1fd53c8cc6d4ebc2a32",
+    "analysis_reports/step19_corrected_validation_analysis/accuracy_curve.png": "dda3d93f0cbe483ec00bd22bbf74fa1defb471ea287fb3c473de2a7cc0c90f2f",
+    "analysis_reports/step20_corrected_validation_classification/evaluate_fixed_checkpoint.py": "2bf615e16a43804872878c05ab39598d76fdbb8b39ecdd0f02326ca8ac8c386d",
+    "analysis_reports/step20_corrected_validation_classification_attempt02/metrics.json": "147d0028a7b2c1d00c8118683f132b871055be0da574f6a6e41c0de150a8ddc7",
+    "analysis_reports/step20_corrected_validation_classification_attempt02/validation_predictions.csv": "25076b153be4113509fa1d1679abe96139ea1b05f5fc177ca514e9a4fe4359d5",
+    "analysis_reports/step20_corrected_validation_classification_attempt02/confusion_matrix.png": "8d372dc93d86fea1285c620f0dc6908a3dc37dafbecdf7df51565fb0059329ff",
+    "analysis_reports/step20_corrected_validation_classification_attempt02/per_class_metrics.png": "504368ce67a9f685060dad74f78ca85143396e0a3c45488a2fa95b6cf5ba0c7e",
+    "analysis_reports/step20_corrected_validation_classification_attempt02/evaluation_report.md": "8693907d55204b46503f850bb9dfd8fc2b47d8ec9d020241038911438a2e469b",
+    "analysis_reports/step20_corrected_validation_classification_attempt02/evaluate_fixed_checkpoint.py": "2bf615e16a43804872878c05ab39598d76fdbb8b39ecdd0f02326ca8ac8c386d",
+    "analysis_reports/step20_corrected_validation_classification_attempt02/schema_fix_and_verification.md": "f6e3925b13cdfa2b765e8cb94d71b6d7787f2c13cadeb0caefb930ae74e1506f",
+    "analysis_reports/step21_corrected_gradcam_evaluation_attempt02/corrected_xai_protocol.md": "39425e3ced90382893d74fd875d731b2148267d8021b1300d9aaecfe0e190910",
+    "analysis_reports/step21_corrected_gradcam_evaluation_attempt02/protocol.json": "85baca477f64e632ce443968c2178826ab9adbeb4730882a31b915922f7a884e",
+    "analysis_reports/step21_corrected_gradcam_evaluation_attempt02/evaluate_corrected_xai.py": "1336b563e938eb2fd844a67b751dff1edb39039a2ed73ebf3a25044bf76c52cb",
+    "analysis_reports/step21_corrected_gradcam_evaluation_attempt02/report_saved_results.py": "1b15858329950ed1b451b608b0ad7722be0392561f4e8b7d6da8c38ae176db0a",
+    "analysis_reports/step21_corrected_gradcam_evaluation_attempt02/explanation_metadata.csv": "9ca7c031a4f7eca5995df8de4733acc947f5c2b8fc7e8aebea1246e67d692883",
+    "analysis_reports/step21_corrected_gradcam_evaluation_attempt02/quantitative_summary.json": "448972e96279e862b5f3185aa9be3b535fe214590bd223c7ac890b5099c5736e",
+    "analysis_reports/step21_corrected_gradcam_evaluation_attempt02/stability_diagnostics.json": "97772ab07e6631e790679685978a22187377686b6d9c5593c240f155e574266c",
+    "analysis_reports/step21_corrected_gradcam_evaluation_attempt02/gradcam_evaluation_report.md": "d372f63c64ea98953a9f4d8d2a967fd01005aa126a2c34e1f25bbeb23fb4d9b9",
+    "analysis_reports/step21_corrected_gradcam_evaluation_attempt02/scientific_interpretation.md": "1b7ee8748f8f5456d8819613f2c2d8a18473cf77110cac86e60102967faa39c8",
+    "analysis_reports/step21_corrected_gradcam_evaluation_attempt02/qualitative_observations.md": "9eeb5592edf90f8a3a739d01c5f97e479be9c26c8232fe1de1b9ac4b27a98a41",
+    "analysis_reports/step22_final_ui_integration/integration_report.md": "07dd7b78e651c9ca62219309bb2eafbd1b9d2809c3231028de4805a8aa25df2d",
+    "analysis_reports/step23_corrected_ood_calibration/feasibility_report.md": "9394b67fee810ac9fbe9900a5651483292cbeee1fca8f909c5f03a436d42e5c8",
+    "analysis_reports/step23_corrected_ood_calibration/calibration_feasibility.json": "998a1ac161102e8f80ef5df226225a8e0410ebb1eed5276f2f36dc1f207edd90",
+    "analysis_reports/step24_public_demo_readiness/final_readiness_report.md": "0e3d5fe3c159f8c33ce0c959d46db3895cb8d2520de62ad834c9c944adec15f9",
+    "analysis_reports/step24_public_demo_readiness/final_publication_checklist.md": "32d76be348768cda6998db6cf0069e0c71ce858c7042e4efac6be9be7eb9e231",
+    "public_demo/app.py": "02512fbbab3a00d6360cb305f1398a7bf222f800049df3b5ea9aceffd764dddd",
+    "public_demo/Dockerfile": "cba838937464875c78b825c623bf8d1cf18cc2cbed0cf8da6f334fc1458a5574",
+    "public_demo/README.md": "f464865e8a55f1d772d4735026246369551f61c23a9b34b6bace5d447159eaf4",
+    "public_demo/requirements.txt": "2a4054c6efee78df2023c0c97addbce4c08774237db2d9fb3c62fbe86b38a8fb"
+  },
+  "not_included": [
+    "raw datasets",
+    "model weights",
+    "per-image CAM arrays",
+    "individual radio image overlays",
+    "machine-local baselines",
+    "approval receipts"
+  ],
+  "scientific_experiments_executed": false
+}

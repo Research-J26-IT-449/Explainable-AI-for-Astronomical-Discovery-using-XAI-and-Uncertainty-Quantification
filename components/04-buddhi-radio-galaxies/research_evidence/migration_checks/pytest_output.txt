@@ -1,0 +1,24 @@
+..................................ssssss..........ss.................... [  8%]
+........................................................................ [ 16%]
+......sssss...s......................................................... [ 25%]
+...............................ss....................................... [ 33%]
+........................................................................ [ 42%]
+............................s..ssss..........ssss...s............s...... [ 50%]
+........................................................................ [ 59%]
+........................................................................ [ 67%]
+........................................................................ [ 75%]
+........................................................................ [ 84%]
+........................................................................ [ 92%]
+.............................................................            [100%]
+=========================== short test summary info ===========================
+SKIPPED [6] tests\test_auto_radio.py:233: BLOCKED: excluded real image exports, historical checkpoints/calibration or private final artifacts required; no substitutes or downloads.
+SKIPPED [2] tests\test_auto_radio.py: BLOCKED: excluded real image exports, historical checkpoints/calibration or private final artifacts required; no substitutes or downloads.
+SKIPPED [5] tests\test_dataset.py: BLOCKED: real MiraBest archive is intentionally not distributed; no download or real image access during migration.
+SKIPPED [1] tests\test_demo.py: BLOCKED: excluded real image exports, historical checkpoints/calibration or private final artifacts required; no substitutes or downloads.
+SKIPPED [2] tests\test_external_radio.py:172: BLOCKED: excluded real image exports, historical checkpoints/calibration or private final artifacts required; no substitutes or downloads.
+SKIPPED [1] tests\test_ood_detector.py: BLOCKED: excluded real image exports, historical checkpoints/calibration or private final artifacts required; no substitutes or downloads.
+SKIPPED [4] tests\test_preprocessing.py: BLOCKED: real MiraBest archive is intentionally not distributed; no download or real image access during migration.
+SKIPPED [4] tests\test_pseudocolor.py:121: BLOCKED: requires private real TRAIN images, saved split and historical checkpoint; migration is synthetic-only.
+SKIPPED [1] tests\test_public_demo.py: BLOCKED: individual radio overlays excluded pending redistribution clearance; aggregate UI remains tested.
+SKIPPED [1] tests\test_rotation_augmentation_experiment.py: BLOCKED: excluded real image exports, historical checkpoints/calibration or private final artifacts required; no substitutes or downloads.
+826 passed, 27 skipped in 99.57s (0:01:39)

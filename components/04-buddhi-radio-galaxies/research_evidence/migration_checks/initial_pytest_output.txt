@@ -1,0 +1,811 @@
+..................................FFFFFF..........FFFF.................. [  8%]
+........................................................................ [ 16%]
+......sssss...F......................................................... [ 25%]
+...............................FF....................................... [ 33%]
+........................................................................ [ 42%]
+............................F..ssss..........ssss...s............F...... [ 50%]
+........................................................................ [ 59%]
+........................................................................ [ 67%]
+........................................................................ [ 75%]
+........................................................................ [ 84%]
+........................................................................ [ 92%]
+.............................................................            [100%]
+================================== FAILURES ===================================
+________ test_requested_demo_regression_exact_model_tensors[L-fri-FRI] ________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027F378B4CB0>
+name = 'fri', label = 'FRI', mode = 'L'
+
+    @pytest.mark.parametrize("name,label", [("fri", "FRI"), ("frii", "FRII")])
+    @pytest.mark.parametrize("mode", ["L", "RGB", "RGBA"])
+    def test_requested_demo_regression_exact_model_tensors(monkeypatch, name, label, mode):
+>       with Image.open(ROOT / f"data/demo_samples/mirabest_{name}.png") as exported:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_auto_radio.py:236:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fp = WindowsPath('[COMPONENT_ROOT]/data/demo_samples/mirabest_fri.png')
+mode = 'r', formats = ['PNG', 'BMP', 'DIB', 'GIF', 'JPEG', 'PPM']
+
+    def open(
+        fp: StrOrBytesPath | IO[bytes],
+        mode: Literal["r"] = "r",
+        formats: list[str] | tuple[str, ...] | None = None,
+    ) -> ImageFile.ImageFile:
+        """
+        Opens and identifies the given image file.
+
+        This is a lazy operation; this function identifies the file, but
+        the file remains open and the actual image data is not read from
+        the file until you try to process the data (or call the
+        :py:meth:`~PIL.Image.Image.load` method).  See
+        :py:func:`~PIL.Image.new`. See :ref:`file-handling`.
+
+        :param fp: A filename (string), os.PathLike object or a file object.
+           The file object must implement ``file.read``,
+           ``file.seek``, and ``file.tell`` methods,
+           and be opened in binary mode. The file object will also seek to zero
+           before reading.
+        :param mode: The mode.  If given, this argument must be "r".
+        :param formats: A list or tuple of formats to attempt to load the file in.
+           This can be used to restrict the set of formats checked.
+           Pass ``None`` to try all supported formats. You can print the set of
+           available formats by running ``python3 -m PIL`` or using
+           the :py:func:`PIL.features.pilinfo` function.
+        :returns: An :py:class:`~PIL.Image.Image` object.
+        :exception FileNotFoundError: If the file cannot be found.
+        :exception PIL.UnidentifiedImageError: If the image cannot be opened and
+           identified.
+        :exception ValueError: If the ``mode`` is not "r", or if a ``StringIO``
+           instance is used for ``fp``.
+        :exception TypeError: If ``formats`` is not ``None``, a list or a tuple.
+        """
+
+        if mode != "r":
+            msg = f"bad mode {repr(mode)}"  # type: ignore[unreachable]
+            raise ValueError(msg)
+        elif isinstance(fp, io.StringIO):
+            msg = (  # type: ignore[unreachable]
+                "StringIO cannot be used to open an image. "
+                "Binary data must be used instead."
+            )
+            raise ValueError(msg)
+
+        if formats is None:
+            formats = ID
+        elif not isinstance(formats, (list, tuple)):
+            msg = "formats must be a list or tuple"  # type: ignore[unreachable]
+            raise TypeError(msg)
+
+        exclusive_fp = False
+        filename: str | bytes = ""
+        if is_path(fp):
+            filename = os.fspath(fp)
+>           fp = builtins.open(filename, "rb")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory: '[LOCAL_USER]\\Desktop\\research\\J26-IT-449-GROUP\\components\\04-buddhi-radio-galaxies\\data\\demo_samples\\mirabest_fri.png'
+
+..\..\..\J26-IT-449-IT23308602-AGN-XAI\.venv\Lib\site-packages\PIL\Image.py:3639: FileNotFoundError
+_______ test_requested_demo_regression_exact_model_tensors[L-frii-FRII] _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027F378DEF30>
+name = 'frii', label = 'FRII', mode = 'L'
+
+    @pytest.mark.parametrize("name,label", [("fri", "FRI"), ("frii", "FRII")])
+    @pytest.mark.parametrize("mode", ["L", "RGB", "RGBA"])
+    def test_requested_demo_regression_exact_model_tensors(monkeypatch, name, label, mode):
+>       with Image.open(ROOT / f"data/demo_samples/mirabest_{name}.png") as exported:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_auto_radio.py:236:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fp = WindowsPath('[COMPONENT_ROOT]/data/demo_samples/mirabest_frii.png')
+mode = 'r', formats = ['PNG', 'BMP', 'DIB', 'GIF', 'JPEG', 'PPM']
+
+    def open(
+        fp: StrOrBytesPath | IO[bytes],
+        mode: Literal["r"] = "r",
+        formats: list[str] | tuple[str, ...] | None = None,
+    ) -> ImageFile.ImageFile:
+        """
+        Opens and identifies the given image file.
+
+        This is a lazy operation; this function identifies the file, but
+        the file remains open and the actual image data is not read from
+        the file until you try to process the data (or call the
+        :py:meth:`~PIL.Image.Image.load` method).  See
+        :py:func:`~PIL.Image.new`. See :ref:`file-handling`.
+
+        :param fp: A filename (string), os.PathLike object or a file object.
+           The file object must implement ``file.read``,
+           ``file.seek``, and ``file.tell`` methods,
+           and be opened in binary mode. The file object will also seek to zero
+           before reading.
+        :param mode: The mode.  If given, this argument must be "r".
+        :param formats: A list or tuple of formats to attempt to load the file in.
+           This can be used to restrict the set of formats checked.
+           Pass ``None`` to try all supported formats. You can print the set of
+           available formats by running ``python3 -m PIL`` or using
+           the :py:func:`PIL.features.pilinfo` function.
+        :returns: An :py:class:`~PIL.Image.Image` object.
+        :exception FileNotFoundError: If the file cannot be found.
+        :exception PIL.UnidentifiedImageError: If the image cannot be opened and
+           identified.
+        :exception ValueError: If the ``mode`` is not "r", or if a ``StringIO``
+           instance is used for ``fp``.
+        :exception TypeError: If ``formats`` is not ``None``, a list or a tuple.
+        """
+
+        if mode != "r":
+            msg = f"bad mode {repr(mode)}"  # type: ignore[unreachable]
+            raise ValueError(msg)
+        elif isinstance(fp, io.StringIO):
+            msg = (  # type: ignore[unreachable]
+                "StringIO cannot be used to open an image. "
+                "Binary data must be used instead."
+            )
+            raise ValueError(msg)
+
+        if formats is None:
+            formats = ID
+        elif not isinstance(formats, (list, tuple)):
+            msg = "formats must be a list or tuple"  # type: ignore[unreachable]
+            raise TypeError(msg)
+
+        exclusive_fp = False
+        filename: str | bytes = ""
+        if is_path(fp):
+            filename = os.fspath(fp)
+>           fp = builtins.open(filename, "rb")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory: '[LOCAL_USER]\\Desktop\\research\\J26-IT-449-GROUP\\components\\04-buddhi-radio-galaxies\\data\\demo_samples\\mirabest_frii.png'
+
+..\..\..\J26-IT-449-IT23308602-AGN-XAI\.venv\Lib\site-packages\PIL\Image.py:3639: FileNotFoundError
+_______ test_requested_demo_regression_exact_model_tensors[RGB-fri-FRI] _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027F378DC440>
+name = 'fri', label = 'FRI', mode = 'RGB'
+
+    @pytest.mark.parametrize("name,label", [("fri", "FRI"), ("frii", "FRII")])
+    @pytest.mark.parametrize("mode", ["L", "RGB", "RGBA"])
+    def test_requested_demo_regression_exact_model_tensors(monkeypatch, name, label, mode):
+>       with Image.open(ROOT / f"data/demo_samples/mirabest_{name}.png") as exported:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_auto_radio.py:236:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fp = WindowsPath('[COMPONENT_ROOT]/data/demo_samples/mirabest_fri.png')
+mode = 'r', formats = ['PNG', 'BMP', 'DIB', 'GIF', 'JPEG', 'PPM']
+
+    def open(
+        fp: StrOrBytesPath | IO[bytes],
+        mode: Literal["r"] = "r",
+        formats: list[str] | tuple[str, ...] | None = None,
+    ) -> ImageFile.ImageFile:
+        """
+        Opens and identifies the given image file.
+
+        This is a lazy operation; this function identifies the file, but
+        the file remains open and the actual image data is not read from
+        the file until you try to process the data (or call the
+        :py:meth:`~PIL.Image.Image.load` method).  See
+        :py:func:`~PIL.Image.new`. See :ref:`file-handling`.
+
+        :param fp: A filename (string), os.PathLike object or a file object.
+           The file object must implement ``file.read``,
+           ``file.seek``, and ``file.tell`` methods,
+           and be opened in binary mode. The file object will also seek to zero
+           before reading.
+        :param mode: The mode.  If given, this argument must be "r".
+        :param formats: A list or tuple of formats to attempt to load the file in.
+           This can be used to restrict the set of formats checked.
+           Pass ``None`` to try all supported formats. You can print the set of
+           available formats by running ``python3 -m PIL`` or using
+           the :py:func:`PIL.features.pilinfo` function.
+        :returns: An :py:class:`~PIL.Image.Image` object.
+        :exception FileNotFoundError: If the file cannot be found.
+        :exception PIL.UnidentifiedImageError: If the image cannot be opened and
+           identified.
+        :exception ValueError: If the ``mode`` is not "r", or if a ``StringIO``
+           instance is used for ``fp``.
+        :exception TypeError: If ``formats`` is not ``None``, a list or a tuple.
+        """
+
+        if mode != "r":
+            msg = f"bad mode {repr(mode)}"  # type: ignore[unreachable]
+            raise ValueError(msg)
+        elif isinstance(fp, io.StringIO):
+            msg = (  # type: ignore[unreachable]
+                "StringIO cannot be used to open an image. "
+                "Binary data must be used instead."
+            )
+            raise ValueError(msg)
+
+        if formats is None:
+            formats = ID
+        elif not isinstance(formats, (list, tuple)):
+            msg = "formats must be a list or tuple"  # type: ignore[unreachable]
+            raise TypeError(msg)
+
+        exclusive_fp = False
+        filename: str | bytes = ""
+        if is_path(fp):
+            filename = os.fspath(fp)
+>           fp = builtins.open(filename, "rb")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory: '[LOCAL_USER]\\Desktop\\research\\J26-IT-449-GROUP\\components\\04-buddhi-radio-galaxies\\data\\demo_samples\\mirabest_fri.png'
+
+..\..\..\J26-IT-449-IT23308602-AGN-XAI\.venv\Lib\site-packages\PIL\Image.py:3639: FileNotFoundError
+______ test_requested_demo_regression_exact_model_tensors[RGB-frii-FRII] ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027F378DD6A0>
+name = 'frii', label = 'FRII', mode = 'RGB'
+
+    @pytest.mark.parametrize("name,label", [("fri", "FRI"), ("frii", "FRII")])
+    @pytest.mark.parametrize("mode", ["L", "RGB", "RGBA"])
+    def test_requested_demo_regression_exact_model_tensors(monkeypatch, name, label, mode):
+>       with Image.open(ROOT / f"data/demo_samples/mirabest_{name}.png") as exported:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_auto_radio.py:236:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fp = WindowsPath('[COMPONENT_ROOT]/data/demo_samples/mirabest_frii.png')
+mode = 'r', formats = ['PNG', 'BMP', 'DIB', 'GIF', 'JPEG', 'PPM']
+
+    def open(
+        fp: StrOrBytesPath | IO[bytes],
+        mode: Literal["r"] = "r",
+        formats: list[str] | tuple[str, ...] | None = None,
+    ) -> ImageFile.ImageFile:
+        """
+        Opens and identifies the given image file.
+
+        This is a lazy operation; this function identifies the file, but
+        the file remains open and the actual image data is not read from
+        the file until you try to process the data (or call the
+        :py:meth:`~PIL.Image.Image.load` method).  See
+        :py:func:`~PIL.Image.new`. See :ref:`file-handling`.
+
+        :param fp: A filename (string), os.PathLike object or a file object.
+           The file object must implement ``file.read``,
+           ``file.seek``, and ``file.tell`` methods,
+           and be opened in binary mode. The file object will also seek to zero
+           before reading.
+        :param mode: The mode.  If given, this argument must be "r".
+        :param formats: A list or tuple of formats to attempt to load the file in.
+           This can be used to restrict the set of formats checked.
+           Pass ``None`` to try all supported formats. You can print the set of
+           available formats by running ``python3 -m PIL`` or using
+           the :py:func:`PIL.features.pilinfo` function.
+        :returns: An :py:class:`~PIL.Image.Image` object.
+        :exception FileNotFoundError: If the file cannot be found.
+        :exception PIL.UnidentifiedImageError: If the image cannot be opened and
+           identified.
+        :exception ValueError: If the ``mode`` is not "r", or if a ``StringIO``
+           instance is used for ``fp``.
+        :exception TypeError: If ``formats`` is not ``None``, a list or a tuple.
+        """
+
+        if mode != "r":
+            msg = f"bad mode {repr(mode)}"  # type: ignore[unreachable]
+            raise ValueError(msg)
+        elif isinstance(fp, io.StringIO):
+            msg = (  # type: ignore[unreachable]
+                "StringIO cannot be used to open an image. "
+                "Binary data must be used instead."
+            )
+            raise ValueError(msg)
+
+        if formats is None:
+            formats = ID
+        elif not isinstance(formats, (list, tuple)):
+            msg = "formats must be a list or tuple"  # type: ignore[unreachable]
+            raise TypeError(msg)
+
+        exclusive_fp = False
+        filename: str | bytes = ""
+        if is_path(fp):
+            filename = os.fspath(fp)
+>           fp = builtins.open(filename, "rb")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory: '[LOCAL_USER]\\Desktop\\research\\J26-IT-449-GROUP\\components\\04-buddhi-radio-galaxies\\data\\demo_samples\\mirabest_frii.png'
+
+..\..\..\J26-IT-449-IT23308602-AGN-XAI\.venv\Lib\site-packages\PIL\Image.py:3639: FileNotFoundError
+______ test_requested_demo_regression_exact_model_tensors[RGBA-fri-FRI] _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027F378DDD00>
+name = 'fri', label = 'FRI', mode = 'RGBA'
+
+    @pytest.mark.parametrize("name,label", [("fri", "FRI"), ("frii", "FRII")])
+    @pytest.mark.parametrize("mode", ["L", "RGB", "RGBA"])
+    def test_requested_demo_regression_exact_model_tensors(monkeypatch, name, label, mode):
+>       with Image.open(ROOT / f"data/demo_samples/mirabest_{name}.png") as exported:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_auto_radio.py:236:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fp = WindowsPath('[COMPONENT_ROOT]/data/demo_samples/mirabest_fri.png')
+mode = 'r', formats = ['PNG', 'BMP', 'DIB', 'GIF', 'JPEG', 'PPM']
+
+    def open(
+        fp: StrOrBytesPath | IO[bytes],
+        mode: Literal["r"] = "r",
+        formats: list[str] | tuple[str, ...] | None = None,
+    ) -> ImageFile.ImageFile:
+        """
+        Opens and identifies the given image file.
+
+        This is a lazy operation; this function identifies the file, but
+        the file remains open and the actual image data is not read from
+        the file until you try to process the data (or call the
+        :py:meth:`~PIL.Image.Image.load` method).  See
+        :py:func:`~PIL.Image.new`. See :ref:`file-handling`.
+
+        :param fp: A filename (string), os.PathLike object or a file object.
+           The file object must implement ``file.read``,
+           ``file.seek``, and ``file.tell`` methods,
+           and be opened in binary mode. The file object will also seek to zero
+           before reading.
+        :param mode: The mode.  If given, this argument must be "r".
+        :param formats: A list or tuple of formats to attempt to load the file in.
+           This can be used to restrict the set of formats checked.
+           Pass ``None`` to try all supported formats. You can print the set of
+           available formats by running ``python3 -m PIL`` or using
+           the :py:func:`PIL.features.pilinfo` function.
+        :returns: An :py:class:`~PIL.Image.Image` object.
+        :exception FileNotFoundError: If the file cannot be found.
+        :exception PIL.UnidentifiedImageError: If the image cannot be opened and
+           identified.
+        :exception ValueError: If the ``mode`` is not "r", or if a ``StringIO``
+           instance is used for ``fp``.
+        :exception TypeError: If ``formats`` is not ``None``, a list or a tuple.
+        """
+
+        if mode != "r":
+            msg = f"bad mode {repr(mode)}"  # type: ignore[unreachable]
+            raise ValueError(msg)
+        elif isinstance(fp, io.StringIO):
+            msg = (  # type: ignore[unreachable]
+                "StringIO cannot be used to open an image. "
+                "Binary data must be used instead."
+            )
+            raise ValueError(msg)
+
+        if formats is None:
+            formats = ID
+        elif not isinstance(formats, (list, tuple)):
+            msg = "formats must be a list or tuple"  # type: ignore[unreachable]
+            raise TypeError(msg)
+
+        exclusive_fp = False
+        filename: str | bytes = ""
+        if is_path(fp):
+            filename = os.fspath(fp)
+>           fp = builtins.open(filename, "rb")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory: '[LOCAL_USER]\\Desktop\\research\\J26-IT-449-GROUP\\components\\04-buddhi-radio-galaxies\\data\\demo_samples\\mirabest_fri.png'
+
+..\..\..\J26-IT-449-IT23308602-AGN-XAI\.venv\Lib\site-packages\PIL\Image.py:3639: FileNotFoundError
+_____ test_requested_demo_regression_exact_model_tensors[RGBA-frii-FRII] ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027F377E9E80>
+name = 'frii', label = 'FRII', mode = 'RGBA'
+
+    @pytest.mark.parametrize("name,label", [("fri", "FRI"), ("frii", "FRII")])
+    @pytest.mark.parametrize("mode", ["L", "RGB", "RGBA"])
+    def test_requested_demo_regression_exact_model_tensors(monkeypatch, name, label, mode):
+>       with Image.open(ROOT / f"data/demo_samples/mirabest_{name}.png") as exported:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_auto_radio.py:236:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fp = WindowsPath('[COMPONENT_ROOT]/data/demo_samples/mirabest_frii.png')
+mode = 'r', formats = ['PNG', 'BMP', 'DIB', 'GIF', 'JPEG', 'PPM']
+
+    def open(
+        fp: StrOrBytesPath | IO[bytes],
+        mode: Literal["r"] = "r",
+        formats: list[str] | tuple[str, ...] | None = None,
+    ) -> ImageFile.ImageFile:
+        """
+        Opens and identifies the given image file.
+
+        This is a lazy operation; this function identifies the file, but
+        the file remains open and the actual image data is not read from
+        the file until you try to process the data (or call the
+        :py:meth:`~PIL.Image.Image.load` method).  See
+        :py:func:`~PIL.Image.new`. See :ref:`file-handling`.
+
+        :param fp: A filename (string), os.PathLike object or a file object.
+           The file object must implement ``file.read``,
+           ``file.seek``, and ``file.tell`` methods,
+           and be opened in binary mode. The file object will also seek to zero
+           before reading.
+        :param mode: The mode.  If given, this argument must be "r".
+        :param formats: A list or tuple of formats to attempt to load the file in.
+           This can be used to restrict the set of formats checked.
+           Pass ``None`` to try all supported formats. You can print the set of
+           available formats by running ``python3 -m PIL`` or using
+           the :py:func:`PIL.features.pilinfo` function.
+        :returns: An :py:class:`~PIL.Image.Image` object.
+        :exception FileNotFoundError: If the file cannot be found.
+        :exception PIL.UnidentifiedImageError: If the image cannot be opened and
+           identified.
+        :exception ValueError: If the ``mode`` is not "r", or if a ``StringIO``
+           instance is used for ``fp``.
+        :exception TypeError: If ``formats`` is not ``None``, a list or a tuple.
+        """
+
+        if mode != "r":
+            msg = f"bad mode {repr(mode)}"  # type: ignore[unreachable]
+            raise ValueError(msg)
+        elif isinstance(fp, io.StringIO):
+            msg = (  # type: ignore[unreachable]
+                "StringIO cannot be used to open an image. "
+                "Binary data must be used instead."
+            )
+            raise ValueError(msg)
+
+        if formats is None:
+            formats = ID
+        elif not isinstance(formats, (list, tuple)):
+            msg = "formats must be a list or tuple"  # type: ignore[unreachable]
+            raise TypeError(msg)
+
+        exclusive_fp = False
+        filename: str | bytes = ""
+        if is_path(fp):
+            filename = os.fspath(fp)
+>           fp = builtins.open(filename, "rb")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory: '[LOCAL_USER]\\Desktop\\research\\J26-IT-449-GROUP\\components\\04-buddhi-radio-galaxies\\data\\demo_samples\\mirabest_frii.png'
+
+..\..\..\J26-IT-449-IT23308602-AGN-XAI\.venv\Lib\site-packages\PIL\Image.py:3639: FileNotFoundError
+_______ test_generated_calibration_has_train_validation_provenance_only _______
+
+    def test_generated_calibration_has_train_validation_provenance_only():
+>       artifact = torch.load(EXTERNAL_CALIBRATION_PATH, weights_only=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_auto_radio.py:324:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\J26-IT-449-IT23308602-AGN-XAI\.venv\Lib\site-packages\torch\serialization.py:1565: in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\J26-IT-449-IT23308602-AGN-XAI\.venv\Lib\site-packages\torch\serialization.py:795: in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <torch.serialization._open_file object at 0x0000027F378DD3D0>
+name = WindowsPath('[COMPONENT_ROOT]/outputs/ood/external_compatibility_calibration.pt')
+mode = 'rb'
+
+    def __init__(self, name: str | os.PathLike[str], mode: str) -> None:
+>       super().__init__(open(name, mode))  # noqa: SIM115
+                         ^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '[LOCAL_USER]\\Desktop\\research\\J26-IT-449-GROUP\\components\\04-buddhi-radio-galaxies\\outputs\\ood\\external_compatibility_calibration.pt'
+
+..\..\..\J26-IT-449-IT23308602-AGN-XAI\.venv\Lib\site-packages\torch\serialization.py:776: FileNotFoundError
+_________ test_original_ood_artifact_unchanged_during_auto_prediction _________
+
+    def test_original_ood_artifact_unchanged_during_auto_prediction():
+        paths = [predict.CALIBRATION_PATH, predict.CALIBRATION_PATH.with_suffix(".json")]
+>       before = {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}
+                                       ^^^^^^^^^^^^^^^^^
+
+tests\test_auto_radio.py:339:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+[PYTHON_INSTALL]\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('[COMPONENT_ROOT]/outputs/ood/ood_calibration.pt')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '[LOCAL_USER]\\Desktop\\research\\J26-IT-449-GROUP\\components\\04-buddhi-radio-galaxies\\outputs\\ood\\ood_calibration.pt'
+
+[PYTHON_INSTALL]\Lib\pathlib.py:1013: FileNotFoundError
+_ test_ui_default_is_supported_radio_and_rejection_and_ambiguity_have_reasons _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027F380750A0>
+
+    def test_ui_default_is_supported_radio_and_rejection_and_ambiguity_have_reasons(monkeypatch):
+        from demo import app
+        demo = app.create_demo()
+>       assert demo.input_components[0].image_mode is None  # Alpha must reach our guard.
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: 'NoneType' object is not subscriptable
+
+tests\test_auto_radio.py:349: TypeError
+____________ test_gradio_upload_preserves_alpha_for_auto_rejection ____________
+
+tmp_path = WindowsPath('[COMPONENT_ROOT]/.migration_runtime/pytest/test_gradio_upload_preserves_a0')
+
+    def test_gradio_upload_preserves_alpha_for_auto_rejection(tmp_path):
+        from demo.app import create_demo
+        from gradio.data_classes import ImageData
+        image = synthetic_map().convert("RGBA")
+        image.putalpha(100)
+        path = tmp_path / "transparent.png"
+        image.save(path)
+>       uploaded = create_demo().input_components[0].preprocess(ImageData(path=str(path)))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: 'NoneType' object is not subscriptable
+
+tests\test_auto_radio.py:368: TypeError
+______________ test_selected_checkpoint_loads_in_evaluation_mode ______________
+
+    def test_selected_checkpoint_loads_in_evaluation_mode():
+>       model = load_checkpoint()
+             ^^^^^^^^^^^^^^^^^
+
+tests\test_demo.py:59:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+checkpoint_path = '[LOCAL_USER]\\Desktop\\research\\J26-IT-449-GROUP\\components\\04-buddhi-radio-galaxies\\outputs\\models\\resnet_cnn_best.pth'
+
+    @lru_cache(maxsize=1)
+    def load_checkpoint(checkpoint_path: str = str(CHECKPOINT_PATH)) -> ResNetCNN:
+        """Load the selected checkpoint once and keep the model in evaluation mode."""
+
+        path = Path(checkpoint_path)
+        if not path.is_file():
+>           raise FileNotFoundError(f"Selected ResNet checkpoint was not found: {path}")
+E     FileNotFoundError: Selected ResNet checkpoint was not found: [COMPONENT_ROOT]\outputs\models\resnet_cnn_best.pth
+
+src\inference\predict.py:53: FileNotFoundError
+__ test_exported_mirabest_png_actual_classifier_and_ood_consistency[fri-FRI] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027F3C358050>
+name = 'fri', expected_label = 'FRI'
+
+    @pytest.mark.parametrize("name,expected_label", [("fri", "FRI"), ("frii", "FRII")])
+    def test_exported_mirabest_png_actual_classifier_and_ood_consistency(monkeypatch, name, expected_label):
+        """Read only these requested exports; never adjust gates using their outcomes."""
+        path = Path(__file__).resolve().parents[1] / "data" / "demo_samples" / f"mirabest_{name}.png"
+>       with Image.open(path) as image:
+             ^^^^^^^^^^^^^^^^
+
+tests\test_external_radio.py:176:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fp = WindowsPath('[COMPONENT_ROOT]/data/demo_samples/mirabest_fri.png')
+mode = 'r', formats = ['PNG', 'BMP', 'DIB', 'GIF', 'JPEG', 'PPM', ...]
+
+    def open(
+        fp: StrOrBytesPath | IO[bytes],
+        mode: Literal["r"] = "r",
+        formats: list[str] | tuple[str, ...] | None = None,
+    ) -> ImageFile.ImageFile:
+        """
+        Opens and identifies the given image file.
+
+        This is a lazy operation; this function identifies the file, but
+        the file remains open and the actual image data is not read from
+        the file until you try to process the data (or call the
+        :py:meth:`~PIL.Image.Image.load` method).  See
+        :py:func:`~PIL.Image.new`. See :ref:`file-handling`.
+
+        :param fp: A filename (string), os.PathLike object or a file object.
+           The file object must implement ``file.read``,
+           ``file.seek``, and ``file.tell`` methods,
+           and be opened in binary mode. The file object will also seek to zero
+           before reading.
+        :param mode: The mode.  If given, this argument must be "r".
+        :param formats: A list or tuple of formats to attempt to load the file in.
+           This can be used to restrict the set of formats checked.
+           Pass ``None`` to try all supported formats. You can print the set of
+           available formats by running ``python3 -m PIL`` or using
+           the :py:func:`PIL.features.pilinfo` function.
+        :returns: An :py:class:`~PIL.Image.Image` object.
+        :exception FileNotFoundError: If the file cannot be found.
+        :exception PIL.UnidentifiedImageError: If the image cannot be opened and
+           identified.
+        :exception ValueError: If the ``mode`` is not "r", or if a ``StringIO``
+           instance is used for ``fp``.
+        :exception TypeError: If ``formats`` is not ``None``, a list or a tuple.
+        """
+
+        if mode != "r":
+            msg = f"bad mode {repr(mode)}"  # type: ignore[unreachable]
+            raise ValueError(msg)
+        elif isinstance(fp, io.StringIO):
+            msg = (  # type: ignore[unreachable]
+                "StringIO cannot be used to open an image. "
+                "Binary data must be used instead."
+            )
+            raise ValueError(msg)
+
+        if formats is None:
+            formats = ID
+        elif not isinstance(formats, (list, tuple)):
+            msg = "formats must be a list or tuple"  # type: ignore[unreachable]
+            raise TypeError(msg)
+
+        exclusive_fp = False
+        filename: str | bytes = ""
+        if is_path(fp):
+            filename = os.fspath(fp)
+>           fp = builtins.open(filename, "rb")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory: '[LOCAL_USER]\\Desktop\\research\\J26-IT-449-GROUP\\components\\04-buddhi-radio-galaxies\\data\\demo_samples\\mirabest_fri.png'
+
+..\..\..\J26-IT-449-IT23308602-AGN-XAI\.venv\Lib\site-packages\PIL\Image.py:3639: FileNotFoundError
+_ test_exported_mirabest_png_actual_classifier_and_ood_consistency[frii-FRII] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027F3C359280>
+name = 'frii', expected_label = 'FRII'
+
+    @pytest.mark.parametrize("name,expected_label", [("fri", "FRI"), ("frii", "FRII")])
+    def test_exported_mirabest_png_actual_classifier_and_ood_consistency(monkeypatch, name, expected_label):
+        """Read only these requested exports; never adjust gates using their outcomes."""
+        path = Path(__file__).resolve().parents[1] / "data" / "demo_samples" / f"mirabest_{name}.png"
+>       with Image.open(path) as image:
+             ^^^^^^^^^^^^^^^^
+
+tests\test_external_radio.py:176:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fp = WindowsPath('[COMPONENT_ROOT]/data/demo_samples/mirabest_frii.png')
+mode = 'r', formats = ['PNG', 'BMP', 'DIB', 'GIF', 'JPEG', 'PPM', ...]
+
+    def open(
+        fp: StrOrBytesPath | IO[bytes],
+        mode: Literal["r"] = "r",
+        formats: list[str] | tuple[str, ...] | None = None,
+    ) -> ImageFile.ImageFile:
+        """
+        Opens and identifies the given image file.
+
+        This is a lazy operation; this function identifies the file, but
+        the file remains open and the actual image data is not read from
+        the file until you try to process the data (or call the
+        :py:meth:`~PIL.Image.Image.load` method).  See
+        :py:func:`~PIL.Image.new`. See :ref:`file-handling`.
+
+        :param fp: A filename (string), os.PathLike object or a file object.
+           The file object must implement ``file.read``,
+           ``file.seek``, and ``file.tell`` methods,
+           and be opened in binary mode. The file object will also seek to zero
+           before reading.
+        :param mode: The mode.  If given, this argument must be "r".
+        :param formats: A list or tuple of formats to attempt to load the file in.
+           This can be used to restrict the set of formats checked.
+           Pass ``None`` to try all supported formats. You can print the set of
+           available formats by running ``python3 -m PIL`` or using
+           the :py:func:`PIL.features.pilinfo` function.
+        :returns: An :py:class:`~PIL.Image.Image` object.
+        :exception FileNotFoundError: If the file cannot be found.
+        :exception PIL.UnidentifiedImageError: If the image cannot be opened and
+           identified.
+        :exception ValueError: If the ``mode`` is not "r", or if a ``StringIO``
+           instance is used for ``fp``.
+        :exception TypeError: If ``formats`` is not ``None``, a list or a tuple.
+        """
+
+        if mode != "r":
+            msg = f"bad mode {repr(mode)}"  # type: ignore[unreachable]
+            raise ValueError(msg)
+        elif isinstance(fp, io.StringIO):
+            msg = (  # type: ignore[unreachable]
+                "StringIO cannot be used to open an image. "
+                "Binary data must be used instead."
+            )
+            raise ValueError(msg)
+
+        if formats is None:
+            formats = ID
+        elif not isinstance(formats, (list, tuple)):
+            msg = "formats must be a list or tuple"  # type: ignore[unreachable]
+            raise TypeError(msg)
+
+        exclusive_fp = False
+        filename: str | bytes = ""
+        if is_path(fp):
+            filename = os.fspath(fp)
+>           fp = builtins.open(filename, "rb")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory: '[LOCAL_USER]\\Desktop\\research\\J26-IT-449-GROUP\\components\\04-buddhi-radio-galaxies\\data\\demo_samples\\mirabest_frii.png'
+
+..\..\..\J26-IT-449-IT23308602-AGN-XAI\.venv\Lib\site-packages\PIL\Image.py:3639: FileNotFoundError
+___ test_locked_checkpoint_and_final_metrics_exist_and_are_not_ood_outputs ____
+
+    def test_locked_checkpoint_and_final_metrics_exist_and_are_not_ood_outputs():
+        checkpoint = Path("outputs/models/resnet_cnn_best.pth")
+        final_metrics = Path("outputs/metrics/resnet_test_evaluation.json")
+        final_csv = Path("outputs/metrics/final_test_metrics.csv")
+>       assert checkpoint.is_file()
+E    AssertionError: assert False
+E     +  where False = is_file()
+E     +    where is_file = WindowsPath('outputs/models/resnet_cnn_best.pth').is_file
+
+tests\test_ood_detector.py:52: AssertionError
+________ test_experiment_never_uses_test_and_preserves_final_artifacts ________
+
+tmp_path = WindowsPath('[COMPONENT_ROOT]/.migration_runtime/pytest/test_experiment_never_uses_tes0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027F3C82E7E0>
+
+    def test_experiment_never_uses_test_and_preserves_final_artifacts(tmp_path, monkeypatch):
+        config = yaml.safe_load(Path("config.yaml").read_text())
+        config_path = tmp_path / "config.yaml"
+        config_path.write_text(yaml.safe_dump(config))
+        splits = {"train": [0, 1], "validation": [2, 3], "test": [4, 5]}
+        split_path = tmp_path / config["paths"]["splits"] / "split_indices.json"
+        split_path.parent.mkdir(parents=True)
+        split_path.write_text(json.dumps(splits))
+        output_root = tmp_path / "outputs"
+        protected = [output_root / "models" / "resnet_cnn_best.pth",
+                     output_root / "metrics" / "resnet_test_evaluation.json",
+                     output_root / "metrics" / "final_test_metrics.csv"]
+        for path in protected:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(b"existing final artifact")
+        # Also check the real locked artifacts using hashes, without loading/scoring any samples.
+        actual = [Path("outputs/models/resnet_cnn_best.pth"),
+                  Path("outputs/metrics/resnet_test_evaluation.json"),
+                  Path("outputs/metrics/final_test_metrics.csv")]
+>       before = {p: hashlib.sha256(p.read_bytes()).hexdigest() for p in protected + actual}
+                                    ^^^^^^^^^^^^^^
+
+tests\test_rotation_augmentation_experiment.py:71:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+[PYTHON_INSTALL]\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('outputs/models/resnet_cnn_best.pth'), mode = 'rb'
+buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'outputs\\models\\resnet_cnn_best.pth'
+
+[PYTHON_INSTALL]\Lib\pathlib.py:1013: FileNotFoundError
+=========================== short test summary info ===========================
+SKIPPED [5] tests\test_dataset.py: BLOCKED: real MiraBest archive is intentionally not distributed; no download or real image access during migration.
+SKIPPED [4] tests\test_preprocessing.py: BLOCKED: real MiraBest archive is intentionally not distributed; no download or real image access during migration.
+SKIPPED [4] tests\test_pseudocolor.py:121: BLOCKED: requires private real TRAIN images, saved split and historical checkpoint; migration is synthetic-only.
+SKIPPED [1] tests\test_public_demo.py: BLOCKED: individual radio overlays excluded pending redistribution clearance; aggregate UI remains tested.
+FAILED tests/test_auto_radio.py::test_requested_demo_regression_exact_model_tensors[L-fri-FRI]
+FAILED tests/test_auto_radio.py::test_requested_demo_regression_exact_model_tensors[L-frii-FRII]
+FAILED tests/test_auto_radio.py::test_requested_demo_regression_exact_model_tensors[RGB-fri-FRI]
+FAILED tests/test_auto_radio.py::test_requested_demo_regression_exact_model_tensors[RGB-frii-FRII]
+FAILED tests/test_auto_radio.py::test_requested_demo_regression_exact_model_tensors[RGBA-fri-FRI]
+FAILED tests/test_auto_radio.py::test_requested_demo_regression_exact_model_tensors[RGBA-frii-FRII]
+FAILED tests/test_auto_radio.py::test_generated_calibration_has_train_validation_provenance_only
+FAILED tests/test_auto_radio.py::test_original_ood_artifact_unchanged_during_auto_prediction
+FAILED tests/test_auto_radio.py::test_ui_default_is_supported_radio_and_rejection_and_ambiguity_have_reasons
+FAILED tests/test_auto_radio.py::test_gradio_upload_preserves_alpha_for_auto_rejection
+FAILED tests/test_demo.py::test_selected_checkpoint_loads_in_evaluation_mode
+FAILED tests/test_external_radio.py::test_exported_mirabest_png_actual_classifier_and_ood_consistency[fri-FRI]
+FAILED tests/test_external_radio.py::test_exported_mirabest_png_actual_classifier_and_ood_consistency[frii-FRII]
+FAILED tests/test_ood_detector.py::test_locked_checkpoint_and_final_metrics_exist_and_are_not_ood_outputs
+FAILED tests/test_rotation_augmentation_experiment.py::test_experiment_never_uses_test_and_preserves_final_artifacts
+15 failed, 824 passed, 14 skipped in 121.53s (0:02:01)

@@ -1,0 +1,70 @@
+project:
+  name: "J26-IT-449"
+  title: "Explainable AI for Astronomical Discovery using XAI and Uncertainty Quantification"
+  component: "AGN-Aware Radio Source Structure Classification using CNN + XAI"
+  student: "J.A.B.G. Jayawickrama"
+  student_id: "IT23308602"
+  python_version: "3.12"
+
+paths:
+  data_root: "data"
+  raw_data: "data/raw"
+  mirabest_root: "data/raw/mirabest"
+  interim_data: "data/interim"
+  processed_data: "data/processed"
+  splits: "data/splits"
+  models: "outputs/models"
+  metrics: "outputs/metrics"
+  figures: "outputs/figures"
+  confusion_matrix: "outputs/confusion_matrix"
+  gradcam: "outputs/gradcam"
+  xai_evaluation: "outputs/xai_evaluation"
+  logs: "outputs/logs"
+
+dataset:
+  name: "MiraBest Zenodo v1 basic binary dataset"
+  source_record: "https://zenodo.org/records/4288837"
+  source_type: "official Zenodo v1 archive"
+  task: "binary FR-I vs FR-II classification"
+  archive_filename: "batches.tar.gz"
+  archive_md5: "fa9d6ad8fdde95b0a19df11433e8bca3"
+  download_url: "https://zenodo.org/records/4288837/files/batches.tar.gz?download=1"
+  verified_payload_samples: 792
+  label_mapping:
+    0: "FR-I"
+    1: "FR-II"
+
+preprocessing:
+  normalize_mean: 0.5
+  normalize_std: 0.5
+  preserve_image_size: true
+  rotation_degrees: 15.0
+  horizontal_flip: true
+  vertical_flip: true
+
+splitting:
+  train_ratio: 0.70
+  validation_ratio: 0.15
+  test_ratio: 0.15
+
+training:
+  seed: 42
+  batch_size: 32
+  num_epochs: 20
+  learning_rate: 0.001
+  weight_decay: 0.0
+  num_workers: 0
+  early_stopping_patience: 5
+  device: "cpu"
+
+models:
+  improved:
+    num_epochs: 30
+    early_stopping_patience: 7
+  resnet:
+    learning_rate: 0.0003
+    weight_decay: 0.0001
+    num_epochs: 30
+    early_stopping_patience: 7
+    scheduler_patience: 2
+    scheduler_factor: 0.5

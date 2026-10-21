@@ -1,0 +1,18 @@
+{
+  "kind": "sanitized aggregate-only publication snapshot",
+  "no_metric_recalculation": true,
+  "researcher_release_review_required": true,
+  "source_files": {
+    "analysis_reports\\step20_corrected_validation_classification_attempt02\\metrics.json": "147d0028a7b2c1d00c8118683f132b871055be0da574f6a6e41c0de150a8ddc7",
+    "analysis_reports\\step20_corrected_validation_classification_attempt02\\confusion_matrix.png": "8d372dc93d86fea1285c620f0dc6908a3dc37dafbecdf7df51565fb0059329ff",
+    "analysis_reports\\step21_corrected_gradcam_evaluation_attempt02\\quantitative_summary.json": "448972e96279e862b5f3185aa9be3b535fe214590bd223c7ac890b5099c5736e"
+  },
+  "public_files": {
+    "confusion_matrix.png": "8d372dc93d86fea1285c620f0dc6908a3dc37dafbecdf7df51565fb0059329ff",
+    "research_results.json": "62043649377128a33e037a5fadef98e77fedcabca8c038afdbe5623b34ae38ad"
+  },
+  "excluded": "MiraBest example images/overlays, individual records, model weights, data manifests, private research outputs, credentials",
+  "example_redistribution_status": "not established from repository evidence; excluded, not assumed permitted",
+  "code_license_status": "no root LICENSE found; publisher must confirm authority and license before release",
+  "attribution": "MiraBest Zenodo v1 https://doi.org/10.5281/zenodo.4288837; Grad-CAM https://arxiv.org/abs/1610.02391; no ownership/redistribution license inferred"
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "canonical_sha256": "f2c580e4e323dd2999048b32cbc58c0d3826a853a09f24fb320eee81d4cf5151",
+    "confirmed_byte_equal": true,
+    "dataset_indices": [
+      198,
+      323,
+      474,
+      587,
+      694
+    ],
+    "splits": [
+      "train",
+      "validation"
+    ],
+    "labels": [
+      0,
+      1
+    ],
+    "cross_train_validation": true,
+    "within_train": true,
+    "within_validation": true,
+    "conflicting_labels": true,
+    "members": [
+      {
+        "dataset_index": 198,
+        "split": "validation",
+        "label": 0,
+        "filename": "BestCat_proc/Cropped/100_036.061_+000.563.png",
+        "member": "batches/data_batch_3",
+        "member_row": 22,
+        "shape": [
+          150,
+          150
+        ],
+        "dtype": "uint8",
+        "canonical_sha256": "f2c580e4e323dd2999048b32cbc58c0d3826a853a09f24fb320eee81d4cf5151",
+        "confirmed_byte_equal": true
+      },
+      {
+        "dataset_index": 323,
+        "split": "train",
+        "label": 1,
+        "filename": "BestCat_proc/Cropped/200_020.485_-000.490.png",
+        "member": "batches/data_batch_4",
+        "member_row": 59,
+        "shape": [
+          150,
+          150
+        ],
+        "dtype": "uint8",
+        "canonical_sha256": "f2c580e4e323dd2999048b32cbc58c0d3826a853a09f24fb320eee81d4cf5151",
+        "confirmed_byte_equal": true
+      },
+      {
+        "dataset_index": 474,
+        "split": "validation",
+        "label": 0,
+        "filename": "BestCat_proc/Cropped/100_016.732_+000.523.png",
+        "member": "batches/data_batch_6",
+        "member_row": 34,
+        "shape": [
+          150,
+          150
+        ],
+        "dtype": "uint8",
+        "canonical_sha256": "f2c580e4e323dd2999048b32cbc58c0d3826a853a09f24fb320eee81d4cf5151",
+        "confirmed_byte_equal": true
+      },
+      {
+        "dataset_index": 587,
+        "split": "validation",
+        "label": 1,
+        "filename": "BestCat_proc/Cropped/200_033.655_+000.710.png",
+        "member": "batches/data_batch_7",
+        "member_row": 59,
+        "shape": [
+          150,
+          150
+        ],
+        "dtype": "uint8",
+        "canonical_sha256": "f2c580e4e323dd2999048b32cbc58c0d3826a853a09f24fb320eee81d4cf5151",
+        "confirmed_byte_equal": true
+      },
+      {
+        "dataset_index": 694,
+        "split": "train",
+        "label": 1,
+        "filename": "BestCat_proc/Cropped/200_035.137_+000.468.png",
+        "member": "batches/data_batch_8",
+        "member_row": 78,
+        "shape": [
+          150,
+          150
+        ],
+        "dtype": "uint8",
+        "canonical_sha256": "f2c580e4e323dd2999048b32cbc58c0d3826a853a09f24fb320eee81d4cf5151",
+        "confirmed_byte_equal": true
+      }
+    ]
+  }
+]

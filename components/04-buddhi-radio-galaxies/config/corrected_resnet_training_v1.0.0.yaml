@@ -1,0 +1,33 @@
+protocol: MiraBest-Development-ExactDedup-v1.0.0
+manifest_reference: data/manifests/mirabest_development_exactdedup_v1.0.0/manifest.json
+manifest_sha256: 4fe53fae197ff3c757afb7b02164eea3b9ea8588c5a3a3bfcd14aba3c6afcf91
+execution_authorized: false
+resume_supported: false
+architecture: ResNetCNN
+initialization: fresh_random
+output_parent: outputs/models/mirabest_development_exactdedup_v1.0.0
+training:
+  seed: 42
+  batch_size: 32
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  num_epochs: 30
+  num_workers: 0
+  early_stopping_patience: 7
+  scheduler_patience: 2
+  scheduler_factor: 0.5
+  device: cpu
+preprocessing:
+  normalize_mean: 0.5
+  normalize_std: 0.5
+  rotation_degrees: 15.0
+  horizontal_flip: true
+  vertical_flip: true
+optimizer: Adam
+loss: CrossEntropyLoss
+scheduler: ReduceLROnPlateau
+checkpoint_selection: minimum_validation_loss_strict_improvement
+historical_config_reference: config.yaml
+historical_config_sha256: 2660615806a50b5f634ff4681a8e560398402559b42478ad7eaafcdcc9694e6e
+historical_checkpoint_reference: outputs/models/resnet_cnn_best.pth
+historical_checkpoint_sha256: d5e1f126c13c2b7bebb95e35f41f0bc6397dd0ea9f4fbfcfbc55648609ab5bc7

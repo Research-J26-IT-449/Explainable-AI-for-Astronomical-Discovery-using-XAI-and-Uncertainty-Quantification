@@ -1,0 +1,91 @@
+{
+  "verdict": "BLOCKED ? CALIBRATION EVIDENCE REQUIRED",
+  "original_blocker": "outputs\\ood\\mirabest_development_exactdedup_v1.0.0\\ood_calibration.pt does not exist; matching corrected calibration is mandatory.",
+  "checkpoint_sha256": "d5841b91b8cdcdb0fb8a538b9a8c79955a7bf83b4a3dcb3bf8cc4f176f6f687c",
+  "manifest_sha256": "4fe53fae197ff3c757afb7b02164eea3b9ea8588c5a3a3bfcd14aba3c6afcf91",
+  "historical_checkpoint_sha256": "d5e1f126c13c2b7bebb95e35f41f0bc6397dd0ea9f4fbfcfbc55648609ab5bc7",
+  "historical_artifact_reused": false,
+  "genuine_external_files_present": 7,
+  "external_file_inventory": [
+    {
+      "filename": "building_01.jpg",
+      "bytes": 1945893,
+      "inspection": "filesystem metadata only; image content not opened"
+    },
+    {
+      "filename": "car_01.jpg",
+      "bytes": 394373,
+      "inspection": "filesystem metadata only; image content not opened"
+    },
+    {
+      "filename": "dog_01.jpg",
+      "bytes": 120273,
+      "inspection": "filesystem metadata only; image content not opened"
+    },
+    {
+      "filename": "landscape_01.jpg",
+      "bytes": 59322,
+      "inspection": "filesystem metadata only; image content not opened"
+    },
+    {
+      "filename": "optical_astronomy_01.jpg",
+      "bytes": 6245,
+      "inspection": "filesystem metadata only; image content not opened"
+    },
+    {
+      "filename": "person_01.jpg",
+      "bytes": 9171486,
+      "inspection": "filesystem metadata only; image content not opened"
+    },
+    {
+      "filename": "screenshot_01.png",
+      "bytes": 315968,
+      "inspection": "filesystem metadata only; image content not opened"
+    }
+  ],
+  "external_file_independence_or_label_provenance_verified": false,
+  "independent_release_evaluation_partition_found": false,
+  "calibration_directory_nonplaceholder_files": [],
+  "release_acceptance_criteria_found": false,
+  "existing_method": {
+    "feature_statistics": "corrected TRAIN ID feature mean/variance, variance floor 1e-6",
+    "feature_layer": "spatial_pool(blocks(stem(input))).flatten(1), 512 features",
+    "energy": "-logsumexp(class logits); higher is more OOD-like",
+    "distance": "sqrt(sum((feature-mean)^2/variance)); higher is more OOD-like",
+    "thresholds": "separate 99th-percentile corrected VALIDATION ID scores, fixed before independent evaluation",
+    "gate": "accept only when energy AND feature distance are <= their respective thresholds",
+    "labels": "FR-I/FR-II labels for manifest integrity; genuine external examples have domain/OOD provenance, not fabricated FR labels",
+    "important_distinction": "ID quantile fitting can be performed without negative OOD examples, but cannot establish OOD detection/release performance by itself"
+  },
+  "implementation_gap": "Historical calibration CLI loads historical model/splits and bulk dataset; artifact validator expects top-level train/validation/test lists and parses TEST indices. A separate corrected-manifest/no-TEST adapter is required; existing method can be reused, CLI cannot be executed unchanged.",
+  "calibration_executed": false,
+  "new_calibration_artifacts": [],
+  "corrected_calibration_metrics": {
+    "id_acceptance": null,
+    "ood_rejection": null,
+    "false_acceptance": null,
+    "false_rejection": null,
+    "energy_auroc": null,
+    "energy_fpr95": null,
+    "distance_auroc": null,
+    "distance_fpr95": null
+  },
+  "metric_unavailability_reason": "No calibration or independent evaluation executed; evidence prerequisites missing.",
+  "public_uploads_enabled": false,
+  "accepted_public_prediction_and_gradcam_verified": false,
+  "functional_evidence": {
+    "startup": "PASS",
+    "http_status": 200,
+    "loopback_url": "http://127.0.0.1:59092/",
+    "unmocked_callback": "PASS_FAIL_CLOSED",
+    "prediction": "UNSUPPORTED: Corrected-model inference unavailable: Corrected-model OOD calibration is unavailable. Upload predictions and Grad-CAM remain disabled; historical calibration is not reused.",
+    "explanation_images": 0,
+    "fabricated_probabilities": false,
+    "upload_pixels": "synthetic grayscale ramp only",
+    "genuine_accepted_prediction": "NOT_VERIFIED_MISSING_CALIBRATION",
+    "server_closed_after_test": true,
+    "dataset_images_loaded": 0,
+    "model_inference_executed": false
+  },
+  "one_next_researcher_action": "Supply one researcher-approved evaluation package with provenance/hash manifests, independently reserved ID and genuine OOD evaluation memberships disjoint from threshold selection, and predefined numerical dashboard-release acceptance criteria."
+}

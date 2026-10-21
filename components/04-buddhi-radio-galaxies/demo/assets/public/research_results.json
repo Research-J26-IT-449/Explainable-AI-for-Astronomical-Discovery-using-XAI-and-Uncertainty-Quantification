@@ -1,0 +1,33 @@
+{
+  "accuracy": 0.8706896551724138,
+  "aopc30": {
+    "Brightness baseline": 0.22225442241910118,
+    "Grad-CAM": 0.294510471100364,
+    "Random baseline": 0.05396011906980855
+  },
+  "checkpoint_sha256": "d5841b91b8cdcdb0fb8a538b9a8c79955a7bf83b4a3dcb3bf8cc4f176f6f687c",
+  "confusion_matrix": [
+    [
+      38,
+      13
+    ],
+    [
+      2,
+      63
+    ]
+  ],
+  "expert_physics_masks_available": false,
+  "explanations": 116,
+  "live_inference_available": false,
+  "macro_f1": 0.8643909282207154,
+  "manifest_sha256": "4fe53fae197ff3c757afb7b02164eea3b9ea8588c5a3a3bfcd14aba3c6afcf91",
+  "model": "Corrected MiraBest development ResNetCNN",
+  "negative_aopc_count": 8,
+  "prediction_flips": 1553,
+  "protocol": "MiraBest-Development-ExactDedup-v1.0.0",
+  "public_source_images_included": false,
+  "transformation_comparisons": 3480,
+  "unavailable_transformed_cams": 1181,
+  "validation_count": 116,
+  "xai_protocol": "Corrected-GradCAM-Validation-v1.0.0"
+}

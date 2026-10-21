@@ -1,0 +1,138 @@
+{
+  "rotation -5": {
+    "comparisons": 116,
+    "flips": 1,
+    "unavailable": {},
+    "mean_clipped_fraction": 0.0,
+    "max_clipped_fraction": 0.0,
+    "flips_by_true_class": {
+      "0": 0,
+      "1": 1
+    }
+  },
+  "rotation -2": {
+    "comparisons": 116,
+    "flips": 1,
+    "unavailable": {},
+    "mean_clipped_fraction": 0.0,
+    "max_clipped_fraction": 0.0,
+    "flips_by_true_class": {
+      "0": 0,
+      "1": 1
+    }
+  },
+  "rotation 2": {
+    "comparisons": 116,
+    "flips": 1,
+    "unavailable": {},
+    "mean_clipped_fraction": 0.0,
+    "max_clipped_fraction": 0.0,
+    "flips_by_true_class": {
+      "0": 0,
+      "1": 1
+    }
+  },
+  "rotation 5": {
+    "comparisons": 116,
+    "flips": 4,
+    "unavailable": {},
+    "mean_clipped_fraction": 0.0,
+    "max_clipped_fraction": 0.0,
+    "flips_by_true_class": {
+      "0": 2,
+      "1": 2
+    }
+  },
+  "rotation -15": {
+    "comparisons": 116,
+    "flips": 3,
+    "unavailable": {},
+    "mean_clipped_fraction": 0.0,
+    "max_clipped_fraction": 0.0,
+    "flips_by_true_class": {
+      "0": 1,
+      "1": 2
+    }
+  },
+  "rotation 15": {
+    "comparisons": 116,
+    "flips": 7,
+    "unavailable": {},
+    "mean_clipped_fraction": 0.0,
+    "max_clipped_fraction": 0.0,
+    "flips_by_true_class": {
+      "0": 5,
+      "1": 2
+    }
+  },
+  "horizontal_flip None": {
+    "comparisons": 116,
+    "flips": 8,
+    "unavailable": {},
+    "mean_clipped_fraction": 0.0,
+    "max_clipped_fraction": 0.0,
+    "flips_by_true_class": {
+      "0": 5,
+      "1": 3
+    }
+  },
+  "vertical_flip None": {
+    "comparisons": 116,
+    "flips": 8,
+    "unavailable": {},
+    "mean_clipped_fraction": 0.0,
+    "max_clipped_fraction": 0.0,
+    "flips_by_true_class": {
+      "0": 5,
+      "1": 3
+    }
+  },
+  "noise 0.005": {
+    "comparisons": 1160,
+    "flips": 760,
+    "unavailable": {
+      "transformed_degenerate_cam": 459
+    },
+    "mean_clipped_fraction": 0.491877816091954,
+    "max_clipped_fraction": 0.5060888888888889,
+    "flips_by_true_class": {
+      "0": 130,
+      "1": 630
+    }
+  },
+  "noise 0.01": {
+    "comparisons": 1160,
+    "flips": 760,
+    "unavailable": {
+      "transformed_degenerate_cam": 722
+    },
+    "mean_clipped_fraction": 0.4921855555555555,
+    "max_clipped_fraction": 0.5073333333333333,
+    "flips_by_true_class": {
+      "0": 130,
+      "1": 630
+    }
+  },
+  "brightness 0.98": {
+    "comparisons": 116,
+    "flips": 0,
+    "unavailable": {},
+    "mean_clipped_fraction": 0.0,
+    "max_clipped_fraction": 0.0,
+    "flips_by_true_class": {
+      "0": 0,
+      "1": 0
+    }
+  },
+  "brightness 1.02": {
+    "comparisons": 116,
+    "flips": 0,
+    "unavailable": {},
+    "mean_clipped_fraction": 5.134099616858236e-05,
+    "max_clipped_fraction": 0.00017777777777777779,
+    "flips_by_true_class": {
+      "0": 0,
+      "1": 0
+    }
+  }
+}

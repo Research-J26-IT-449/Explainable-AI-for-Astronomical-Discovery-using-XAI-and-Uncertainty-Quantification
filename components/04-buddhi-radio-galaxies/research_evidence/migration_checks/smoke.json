@@ -1,0 +1,24 @@
+{
+  "mode": "local_loopback_saved_results_only",
+  "scientific_inference_executed": false,
+  "checkpoints_loaded": false,
+  "imported_modules": [
+    "src.models.resnet_cnn",
+    "src.models.corrected_training",
+    "src.data.corrected_training_data",
+    "src.xai.gradcam",
+    "src.xai.faithfulness",
+    "src.xai.stability",
+    "src.xai.morphology_audit",
+    "src.xai.sanity_checks",
+    "src.xai.statistics",
+    "src.inference.corrected_demo",
+    "demo.app"
+  ],
+  "direct_upload_gate": "UNSUPPORTED; no maps/probabilities",
+  "shared_or_deployed": false,
+  "http_status": 200,
+  "response_bytes": 100532,
+  "saved_metrics_display": "PASS",
+  "server_stopped_after_smoke": true
+}
