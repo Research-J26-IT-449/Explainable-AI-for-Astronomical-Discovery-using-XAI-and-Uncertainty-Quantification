@@ -1,0 +1,39 @@
+REAL FITS END-TO-END INFERENCE & GRADIENT SHAP VERIFICATION
+============================================================
+Input FITS File: apStar-dr17-2M00013313%2B7537342.fits
+File Size: 3.87 MB
+Timestamp: 2026-10-21 08:02:55
+
+1. Preprocessing Pipeline:
+   - WCS Keywords: CRVAL1=4.179, CDELT1=6e-6, CRPIX1=1.0
+   - Wavelength Extraction: 10 ** (crval1 + cdelt1 * (pixels - (crpix1 - 1.0)))
+   - Resampling: 4,000 uniform logarithmic channels (15,100.8 A to 16,999.8 A)
+   - Continuum Normalization: 101-pixel running median filter
+   - Array Output: shape (4000,), float32, all finite
+   - Status: Processed from raw FITS (WCS wavelength extraction -> 4,000 log-grid resample -> 101-pixel median continuum normalization)
+   - Execution Time: 0.392 s
+
+2. Model Forward Pass:
+   - Checkpoint: models/corrected_split/1d_cnn_bilstm.pth
+   - Architecture: 1D-CNN-BiLSTM
+   - Predicted Class: Class G
+   - Prediction Confidence: 80.37%
+   - Class Probabilities:
+       Class A: 0.0095%
+       Class B: 0.0438%
+       Class F: 1.6561%
+       Class G: 80.3655%
+       Class K: 17.9250%
+   - Execution Time: 5.63 ms
+
+3. Live Gradient SHAP Attribution:
+   - Explainer: shap.GradientExplainer
+   - Background Reference: 15 training spectra
+   - Attribution Tensor: (1, 4000, 5)
+   - Target Prediction: Class G
+   - Peak Salience Wavelength: 15733.66 A
+   - Peak Salience Magnitude: 0.748451
+   - Matched Stellar Transition: Neutral Oxygen (O I 15,871.3 A)
+   - Computation Latency: 0.768 s
+
+VERIFICATION OUTCOME: SUCCESSFUL END-TO-END EXECUTION

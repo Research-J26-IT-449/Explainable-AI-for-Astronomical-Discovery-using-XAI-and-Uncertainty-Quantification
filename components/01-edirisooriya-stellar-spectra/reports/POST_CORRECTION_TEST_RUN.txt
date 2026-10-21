@@ -1,0 +1,94 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0 -- C:\Users\pasan\OneDrive\Desktop\RESEARCH PLAN\module1_stellar_spectra\venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\pasan\OneDrive\Desktop\RESEARCH PLAN
+plugins: anyio-4.15.1
+collecting ... collected 69 items
+
+module1_stellar_spectra/tests/test_extended_audit.py::TestZeroLeakageDataset::test_sample_counts PASSED [  1%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestZeroLeakageDataset::test_feature_dimensions PASSED [  2%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestZeroLeakageDataset::test_zero_sample_overlap PASSED [  4%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestZeroLeakageDataset::test_finite_values PASSED [  5%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestModelArchitectures::test_forward_pass_dimensions[CNNBiLSTM1D] PASSED [  7%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestModelArchitectures::test_forward_pass_dimensions[ResNet1D] PASSED [  8%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestModelArchitectures::test_forward_pass_dimensions[StandardCNN1D] PASSED [ 10%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestModelArchitectures::test_trained_checkpoint_loading PASSED [ 11%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestScientificLineValidation::test_total_peaks_positive PASSED [ 13%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestScientificLineValidation::test_alignment_score_range PASSED [ 14%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestScientificLineValidation::test_random_baseline_metrics_present PASSED [ 15%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestXAIEvaluation::test_faithfulness_metrics PASSED [ 17%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestXAIEvaluation::test_stability_metrics PASSED [ 18%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestBaselineBenchmarks::test_benchmark_files_exist PASSED [ 20%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestBaselineBenchmarks::test_cnn_bilstm_highest_balanced_accuracy PASSED [ 21%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestDirectRecomputations::test_direct_forward_pass_accuracy_recomputation PASSED [ 23%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestDirectRecomputations::test_strict_astronomical_object_isolation PASSED [ 24%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestDirectRecomputations::test_gradient_shap_attribution_tensor_integrity PASSED [ 26%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestCheckpointDeepCopyAndFormatContracts::test_checkpoint_deepcopy_isolation PASSED [ 27%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestCheckpointDeepCopyAndFormatContracts::test_input_format_contracts_4000_bins PASSED [ 28%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestCheckpointDeepCopyAndFormatContracts::test_real_fits_inference_if_available PASSED [ 30%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestUploadPreprocessingContracts::test_reject_nan_flux PASSED [ 31%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestUploadPreprocessingContracts::test_reject_inf_flux PASSED [ 33%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestUploadPreprocessingContracts::test_reject_wrong_channel_length_in_csv PASSED [ 34%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestUploadPreprocessingContracts::test_reject_out_of_bounds_wavelengths PASSED [ 36%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestUploadPreprocessingContracts::test_validate_prenormalized_4000_spectrum PASSED [ 37%]
+module1_stellar_spectra/tests/test_extended_audit.py::TestUploadPreprocessingContracts::test_auto_normalize_raw_counts PASSED [ 39%]
+module1_stellar_spectra/tests/test_label_boundaries.py::test_label_consistency PASSED [ 40%]
+module1_stellar_spectra/tests/test_pipeline.py::TestLabelBoundaries::test_M_boundary PASSED [ 42%]
+module1_stellar_spectra/tests/test_pipeline.py::TestLabelBoundaries::test_K_boundary PASSED [ 43%]
+module1_stellar_spectra/tests/test_pipeline.py::TestLabelBoundaries::test_G_boundary PASSED [ 44%]
+module1_stellar_spectra/tests/test_pipeline.py::TestLabelBoundaries::test_F_boundary PASSED [ 46%]
+module1_stellar_spectra/tests/test_pipeline.py::TestLabelBoundaries::test_A_boundary PASSED [ 47%]
+module1_stellar_spectra/tests/test_pipeline.py::TestLabelBoundaries::test_B_boundary PASSED [ 49%]
+module1_stellar_spectra/tests/test_pipeline.py::TestLabelBoundaries::test_O_boundary PASSED [ 50%]
+module1_stellar_spectra/tests/test_pipeline.py::TestLabelBoundaries::test_no_overlap_at_boundary PASSED [ 52%]
+module1_stellar_spectra/tests/test_pipeline.py::TestManifest::test_manifest_not_empty PASSED [ 53%]
+module1_stellar_spectra/tests/test_pipeline.py::TestManifest::test_manifest_has_required_columns PASSED [ 55%]
+module1_stellar_spectra/tests/test_pipeline.py::TestManifest::test_no_null_labels PASSED [ 56%]
+module1_stellar_spectra/tests/test_pipeline.py::TestManifest::test_all_labels_are_known_classes PASSED [ 57%]
+module1_stellar_spectra/tests/test_pipeline.py::TestManifest::test_more_than_62_spectra PASSED [ 59%]
+module1_stellar_spectra/tests/test_pipeline.py::TestDatasetSplits::test_splits_have_X_and_y PASSED [ 60%]
+module1_stellar_spectra/tests/test_pipeline.py::TestDatasetSplits::test_splits_are_non_empty PASSED [ 62%]
+module1_stellar_spectra/tests/test_pipeline.py::TestDatasetSplits::test_X_and_y_same_length PASSED [ 63%]
+module1_stellar_spectra/tests/test_pipeline.py::TestDatasetSplits::test_feature_length_is_4000 PASSED [ 65%]
+module1_stellar_spectra/tests/test_pipeline.py::TestDatasetSplits::test_corrected_split_sizes_are_700_150_150 PASSED [ 66%]
+module1_stellar_spectra/tests/test_pipeline.py::TestDatasetSplits::test_test_set_size_is_150 PASSED [ 68%]
+module1_stellar_spectra/tests/test_pipeline.py::TestEvaluationConsistency::test_confusion_matrix_total_equals_test_size PASSED [ 69%]
+module1_stellar_spectra/tests/test_pipeline.py::TestEvaluationConsistency::test_diagonal_accuracy_matches_reported_accuracy PASSED [ 71%]
+module1_stellar_spectra/tests/test_pipeline.py::TestEvaluationConsistency::test_accuracy_is_between_0_and_1 PASSED [ 72%]
+module1_stellar_spectra/tests/test_pipeline.py::TestEvaluationConsistency::test_macro_f1_is_between_0_and_1 PASSED [ 73%]
+module1_stellar_spectra/tests/test_pipeline.py::TestEvaluationConsistency::test_balanced_accuracy_is_between_0_and_1 PASSED [ 75%]
+module1_stellar_spectra/tests/test_pipeline.py::TestEvaluationConsistency::test_class_labels_present PASSED [ 76%]
+module1_stellar_spectra/tests/test_pipeline.py::TestEvaluationConsistency::test_class_order_is_A_B_F_G_K PASSED [ 78%]
+module1_stellar_spectra/tests/test_pipeline.py::TestEvaluationConsistency::test_confusion_matrix_shape_is_5x5 PASSED [ 79%]
+module1_stellar_spectra/tests/test_pipeline.py::TestEvaluationConsistency::test_corrected_accuracy_is_approximately_77_percent PASSED [ 81%]
+module1_stellar_spectra/tests/test_pipeline.py::TestEvaluationConsistency::test_corrected_balanced_accuracy_is_approximately_74_percent PASSED [ 82%]
+module1_stellar_spectra/tests/test_pipeline.py::TestHistoricalArtifacts::test_historical_metrics_json_exists_as_artifact PASSED [ 84%]
+module1_stellar_spectra/tests/test_pipeline.py::TestHistoricalArtifacts::test_historical_confusion_matrix_txt_exists_as_artifact PASSED [ 85%]
+module1_stellar_spectra/tests/test_pipeline.py::TestHistoricalArtifacts::test_historical_metrics_json_is_parseable PASSED [ 86%]
+module1_stellar_spectra/tests/test_pipeline.py::TestSHAPOutput::test_shap_key_present PASSED [ 88%]
+module1_stellar_spectra/tests/test_pipeline.py::TestSHAPOutput::test_shap_wavelength_axis_is_4000 PASSED [ 89%]
+module1_stellar_spectra/tests/test_pipeline.py::TestSHAPOutput::test_clean_shap_tensor_shape_is_150_4000_5 PASSED [ 91%]
+module1_stellar_spectra/tests/test_pipeline.py::TestSHAPOutput::test_shap_values_finite PASSED [ 92%]
+module1_stellar_spectra/tests/test_pipeline.py::TestSHAPOutput::test_legacy_shap_file_exists_as_artifact PASSED [ 94%]
+module1_stellar_spectra/tests/test_pipeline.py::TestLineMatching::test_csv_not_empty PASSED [ 95%]
+module1_stellar_spectra/tests/test_pipeline.py::TestLineMatching::test_required_columns_present PASSED [ 97%]
+module1_stellar_spectra/tests/test_pipeline.py::TestLineMatching::test_aaas_values_non_negative PASSED [ 98%]
+module1_stellar_spectra/tests/test_pipeline.py::TestLineMatching::test_wavelengths_in_apogee_range PASSED [100%]
+
+============================== warnings summary ===============================
+module1_stellar_spectra/tests/test_extended_audit.py::TestZeroLeakageDataset::test_sample_counts
+module1_stellar_spectra/tests/test_extended_audit.py::TestScientificLineValidation::test_total_peaks_positive
+module1_stellar_spectra/tests/test_pipeline.py::TestManifest::test_manifest_not_empty
+module1_stellar_spectra/tests/test_pipeline.py::TestDatasetSplits::test_splits_have_X_and_y
+module1_stellar_spectra/tests/test_pipeline.py::TestEvaluationConsistency::test_confusion_matrix_total_equals_test_size
+module1_stellar_spectra/tests/test_pipeline.py::TestSHAPOutput::test_shap_key_present
+module1_stellar_spectra/tests/test_pipeline.py::TestLineMatching::test_csv_not_empty
+  C:\Users\pasan\OneDrive\Desktop\RESEARCH PLAN\module1_stellar_spectra\venv\Lib\site-packages\_pytest\fixtures.py:1313: PytestRemovedIn10Warning: Class-scoped fixture defined as instance method is deprecated.
+  Instance attributes set in this fixture will NOT be visible to test methods,
+  as each test gets a new instance while the fixture runs only once per class.
+  Use @classmethod decorator and set attributes on cls instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#class-scoped-fixture-as-instance-method
+    fixturefunc = resolve_fixture_function(fixturedef, request)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 69 passed, 7 warnings in 2.80s ========================
