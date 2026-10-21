@@ -1,0 +1,67 @@
+project:
+  id: "J26-IT-449"
+  title: "Explainable AI for Astronomical Discovery using XAI and Uncertainty Quantification"
+  module: "Module 1: SHAP-Driven Feature Discovery in Stellar Spectra"
+  researcher: "P.K. Edirisooriya (IT23330696)"
+  milestone: "IT4010 Progress Presentation 1 (PP1)"
+
+environment:
+  python_version: "3.14.6"
+  framework: "PyTorch 2.14.1+cpu"
+  xai_engine: "SHAP 0.47.0 (GradientExplainer)"
+  random_seed: 42
+
+dataset:
+  source: "SDSS-IV APOGEE DR17 (data.sdss.org)"
+  band: "Near-Infrared H-band (15,100 - 17,000 Angstrom)"
+  resolution: "R ~ 22,500"
+  total_spectra: 1000
+  channels_per_spectrum: 4000
+  dispersion_angstrom_per_pixel: 0.475
+  splits:
+    train: 700
+    validation: 150
+    test: 150
+  leakage_status: "0 overlapping stars (verified group-aware)"
+
+models:
+  primary: "1D-CNN-BiLSTM"
+  comparisons:
+    - "1D-ResNet"
+    - "Standard 1D-CNN"
+    - "Random Forest (100 Trees)"
+    - "L2 Logistic Regression"
+    - "Zero-Rule Majority Baseline"
+
+training_hyperparameters:
+  optimizer: "AdamW"
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 16
+  epochs: 25
+  loss_function: "CrossEntropyLoss"
+
+evaluation_metrics_clean_split:
+  cnn_bilstm:
+    test_accuracy: 0.7733
+    balanced_accuracy: 0.7415
+    macro_f1: 0.6406
+  baseline_majority:
+    test_accuracy: 0.6467
+    balanced_accuracy: 0.2000
+    macro_f1: 0.1571
+
+xai_validation:
+  detected_attribution_peaks: 57
+  literature_reference_lines: 31
+  matching_tolerance_angstrom: 3.5
+  spectral_line_alignment_score_pct: 10.53
+  monte_carlo_trials: 1000
+  monte_carlo_mean_pct: 10.19
+  empirical_p_value: 0.5380
+  faithfulness_aopc_top_k: 0.7507
+  faithfulness_aopc_random: 0.1192
+  faithfulness_ratio: 6.30
+  stability_jaccard_snr_100: 0.8069
+  stability_jaccard_snr_50: 0.7768
+  stability_jaccard_snr_25: 0.6853
