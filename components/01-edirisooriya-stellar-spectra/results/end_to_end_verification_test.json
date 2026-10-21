@@ -1,0 +1,16 @@
+{
+  "star_objid": "2M08502086+1308182",
+  "fits_file": "apStar-dr17-2M08502086%2B1308182.fits",
+  "true_teff": 4572.442642860018,
+  "true_label": "K",
+  "predicted_label": "K",
+  "confidence": 0.972934365272522,
+  "class_probabilities": {
+    "A": 2.890543555622571e-06,
+    "B": 5.498908649315126e-05,
+    "F": 8.001643436728045e-05,
+    "G": 0.02692769467830658,
+    "K": 0.972934365272522
+  },
+  "correct_prediction": true
+}

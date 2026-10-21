@@ -1,0 +1,43 @@
+{
+  "total_detected_peaks": 57,
+  "matched_peaks": 6,
+  "unmatched_peaks": 51,
+  "tolerance_angstrom": 3.5,
+  "alignment_score_pct": 10.526315789473683,
+  "random_baseline_mean_pct": 10.189473684210522,
+  "random_baseline_std_pct": 3.9366857397723907,
+  "empirical_p_value": 0.538,
+  "statistically_significant": false,
+  "top_matched_lines": [
+    {
+      "matched_line": "O_I_15871",
+      "peak_wavelength": 15870.807306953044,
+      "attribution_strength": 0.13377031683921814
+    },
+    {
+      "matched_line": "H_Br14",
+      "peak_wavelength": 15263.143311420241,
+      "attribution_strength": 0.030909141525626183
+    },
+    {
+      "matched_line": "N_I_16764",
+      "peak_wavelength": 16767.26157517027,
+      "attribution_strength": 0.02152922935783863
+    },
+    {
+      "matched_line": "Si_I_15960",
+      "peak_wavelength": 15958.961504976018,
+      "attribution_strength": 0.017923535779118538
+    },
+    {
+      "matched_line": "Mg_I_15745",
+      "peak_wavelength": 15742.518906540563,
+      "attribution_strength": 0.01727321557700634
+    },
+    {
+      "matched_line": "O_I_15569",
+      "peak_wavelength": 15570.004395925855,
+      "attribution_strength": 0.01724354363977909
+    }
+  ]
+}
