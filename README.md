@@ -46,7 +46,7 @@ Each component folder is the home for that member's component-specific code and 
 - **`sewwandi`** — Component 3 development.
 - **`buddhi`** — Component 4 development.
 
-Members should develop primarily on their assigned branch and within their component folder. Send component work to `developer` through a pull request. After review and integration checks, promote the shared integration state from `developer` to `main) through a pull request. Do not treat a branch name as evidence that its work is complete.
+Members should develop primarily on their assigned branch and within their component folder. Send component work to `developer` through a pull request. After review and integration checks, promote the shared integration state from `developer` to `main` through a pull request. Do not treat a branch name as evidence that its work is complete.
 
 ## Collaboration workflow
 
